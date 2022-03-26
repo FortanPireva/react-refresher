@@ -13,8 +13,9 @@ const AllMeetupsPage = (props) => {
       .then((data) => {
         setIsLoading(false);
         const meetups = [];
+        console.log(data);
         for (const key in data) {
-          meetups.push({ id: data.id, ...data[key] });
+          meetups.push({ id: key, ...data[key] });
         }
 
         setMeetuos(meetups);
